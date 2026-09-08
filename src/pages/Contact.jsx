@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import ServiceIcon from '../components/ServiceIcon.jsx'
 
-// Maak een gratis formulier aan op https://formspree.io, koppel het aan
-// ferson.tuinonderhoud@gmail.com en vervang de placeholder hieronder door je eigen form-ID.
-const FORM_ENDPOINT = 'https://formspree.io/f/VUL_HIER_JE_FORM_ID_IN'
+const FORM_ENDPOINT = 'https://formspree.io/f/mbgjpgnb'
 
 const SERVICES = [
   { id: 'onkruid', label: 'Onkruid verwijderen', icon: 'leaf' },
