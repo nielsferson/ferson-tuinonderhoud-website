@@ -1,0 +1,30 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; color: #1f2d1f; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #2f5233; color: #fff; }
+.navbar-links { display: flex; gap: 1.5rem; list-style: none; }
+.navbar-links a { color: #fff; text-decoration: none; }
+.hero { padding: 4rem 2rem; text-align: center; background: #eaf3ea; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; padding: 2rem; }
+.service-card { border: 1px solid #cfe0cf; border-radius: 8px; padding: 1.5rem; }
+.footer { text-align: center; padding: 1.5rem; background: #2f5233; color: #fff; }
+.contact-list { list-style: none; padding: 2rem; max-width: 400px; }
+.contact-list li { display: flex; flex-direction: column; gap: 4px; padding: 1rem 0; border-bottom: 1px solid #cfe0cf; }
+.contact-list span { font-size: 0.85rem; color: #5c7a54; }
+.contact-list a { color: #2f5233; text-decoration: none; font-weight: 500; }
+.contact-form { display: flex; flex-direction: column; gap: 6px; max-width: 400px; padding: 0 2rem 2rem; }
+.contact-form label { font-size: 0.85rem; color: #5c7a54; margin-top: 10px; }
+.contact-form input, .contact-form textarea { padding: 8px 10px; border: 1px solid #cfe0cf; border-radius: 6px; font: inherit; }
+.contact-form button { margin-top: 14px; padding: 10px; background: #2f5233; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+.contact-form button:disabled { opacity: 0.6; cursor: default; }
+.form-status { margin-top: 10px; font-size: 0.9rem; }
+.form-status-ok { color: #2f5233; }
+.form-status-error { color: #a33; }
+.projects-intro { padding: 0 2rem; color: #5c7a54; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 2rem; }
+.project-card { border: 1px solid #cfe0cf; border-radius: 8px; overflow: hidden; padding-bottom: 1rem; }
+.project-images { display: grid; grid-template-columns: 1fr 1fr; }
+.project-image { position: relative; aspect-ratio: 4 / 3; background: #eaf3ea; }
+.project-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.project-label { position: absolute; bottom: 6px; left: 6px; background: rgba(47,82,51,0.85); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.project-card h3 { padding: 0.75rem 1rem 0; }
+.project-card p { padding: 0.25rem 1rem 0; color: #4a5c48; font-size: 0.9rem; }
