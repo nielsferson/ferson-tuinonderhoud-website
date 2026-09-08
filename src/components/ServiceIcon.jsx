@@ -5,6 +5,7 @@ export default function ServiceIcon({ name }) {
     grass: <><path d="M4 20c0-4 1-8 3-8s2 3 2 6" /><path d="M10 20c0-6 1.5-11 3-11s2 4 2 7" /><path d="M17 20c0-3 .8-6 2-6" /></>,
     repeat: <><path d="M17 2l4 4-4 4" /><path d="M3 11V9a4 4 0 0 1 4-4h14" /><path d="M7 22l-4-4 4-4" /><path d="M21 13v2a4 4 0 0 1-4 4H3" /></>,
     droplet: <path d="M12 2.5s6.5 7.4 6.5 12A6.5 6.5 0 1 1 5.5 14.5c0-4.6 6.5-12 6.5-12Z" />,
+    other: <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />,
   }
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
