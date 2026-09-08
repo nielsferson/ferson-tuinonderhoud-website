@@ -128,6 +128,7 @@ body { font-family: system-ui, sans-serif; color: #1f2d1f; }
 }
 .page-header p { margin-top: 0.75rem; max-width: 560px; }
 .page-header p:last-child { margin-bottom: 0; }
+.page-header-standalone { padding-bottom: 2.5rem; }
 
 /* Scroll reveal */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -302,14 +303,14 @@ body { font-family: system-ui, sans-serif; color: #1f2d1f; }
 .service-preview-card:hover { background: var(--green-pale); transform: translateY(-3px); box-shadow: 0 6px 16px rgba(23, 52, 4, 0.15); }
 .service-preview-card-icon { flex: none; color: var(--green-dark); margin-top: 2px; }
 .service-preview-card-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-.service-preview-card-body strong { font-size: 0.9rem; color: var(--green-darkest); }
-.service-preview-card-body span { font-size: 0.8rem; color: var(--green-mid); line-height: 1.35; }
+.service-preview-card-body strong { font-size: 0.9rem; color: var(--green-darkest); overflow-wrap: break-word; }
+.service-preview-card-body span { font-size: 0.8rem; color: var(--green-mid); line-height: 1.35; overflow-wrap: break-word; }
 .home-project-preview { max-width: 500px; margin-bottom: 1rem; border-radius: 8px; overflow: hidden; }
 .section-link { color: var(--green-mid); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
 .section-link:hover { text-decoration: underline; }
 
 /* Diensten page */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; padding: 2rem; align-items: start; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; padding: 2rem; align-items: start; }
 
 .service-card {
   border: 1px solid var(--green-pale);
@@ -347,8 +348,8 @@ body { font-family: system-ui, sans-serif; color: #1f2d1f; }
 .service-card.is-open .service-card-icon { background: var(--green-mid); color: #fff; transform: scale(1.08); }
 
 .service-card-heading { flex: 1; min-width: 0; }
-.service-card-heading h3 { margin-bottom: 4px; }
-.service-card-heading p { color: var(--green-mid); font-size: 0.9rem; }
+.service-card-heading h3 { margin-bottom: 4px; overflow-wrap: break-word; }
+.service-card-heading p { color: var(--green-mid); font-size: 0.9rem; overflow-wrap: break-word; }
 
 .service-card-chevron { flex: none; margin-top: 6px; color: var(--green-mid); transition: transform 0.3s ease, color 0.25s ease; }
 .service-card.is-open .service-card-chevron { transform: rotate(180deg); color: var(--green-dark); }
@@ -417,8 +418,8 @@ body { font-family: system-ui, sans-serif; color: #1f2d1f; }
 .quote-step-indicator.is-active .quote-step-label { color: var(--green-darkest); font-weight: 600; }
 .quote-step-counter { font-size: 0.85rem; color: var(--green-mid); margin-bottom: 1.5rem; }
 
-.quote-form { overflow: hidden; }
-.quote-track { display: flex; transition: transform 0.35s ease; align-items: flex-start; }
+.quote-form { overflow: clip; }
+.quote-track { display: flex; transition: transform 0.35s ease, height 0.25s ease; align-items: flex-start; }
 .quote-panel { flex: none; width: 100%; padding-right: 4px; }
 .quote-panel h3 { margin-bottom: 4px; }
 .quote-panel-hint { color: var(--green-mid); font-size: 0.88rem; margin-bottom: 1rem; }
@@ -486,7 +487,7 @@ body { font-family: system-ui, sans-serif; color: #1f2d1f; }
 .quote-summary { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
 .quote-summary-row { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--green-bg); font-size: 0.9rem; }
 .quote-summary-row dt { color: var(--green-mid); flex: none; }
-.quote-summary-row dd { text-align: right; color: var(--green-darkest); font-weight: 500; }
+.quote-summary-row dd { flex: 1; min-width: 0; text-align: right; color: var(--green-darkest); font-weight: 500; overflow-wrap: break-word; }
 
 .quote-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; }
 .quote-btn {
@@ -527,6 +528,9 @@ body { font-family: system-ui, sans-serif; color: #1f2d1f; }
 @media (max-width: 480px) {
   .quote-step-label { display: none; }
   .quote-step-indicator:not(:last-child)::after { top: 16px; }
+
+  .service-card-header { gap: 0.6rem; padding: 1.25rem; }
+  .service-card-icon { width: 36px; height: 36px; }
 }
 
 /* Projecten page */
