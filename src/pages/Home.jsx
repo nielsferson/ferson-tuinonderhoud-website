@@ -21,7 +21,7 @@ export default function Home() {
         <div className="hero-overlay" />
         <div className="hero-content">
           <h1>Uw tuin, onze zorg</h1>
-          <p>Professioneel tuinonderhoud in heel België.</p>
+          <p>Professioneel tuinonderhoud in heel Limburg.</p>
           <Link to="/contact" className="hero-cta">Contacteer ons</Link>
         </div>
       </section>
