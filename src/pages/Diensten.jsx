@@ -7,7 +7,7 @@ const diensten = [
     title: 'Onkruid verwijderen',
     description: 'Perken, opritten en terrassen onkruidvrij gemaakt.',
     details:
-      'We verwijderen onkruid grondig uit borders, opritten, terrassen en voegen — met de hand of op een milieuvriendelijke manier, zonder schadelijke chemische middelen. Zo blijft uw tuin langer netjes en voorkomen we dat het onkruid zich verder verspreidt.',
+      'We verwijderen onkruid grondig uit borders, opritten, terrassen en voegen met de hand of op een milieuvriendelijke manier, zonder schadelijke chemische middelen. Zo blijft uw tuin langer netjes en voorkomen we dat het onkruid zich verder verspreidt.',
   },
   {
     icon: 'cut',
@@ -28,7 +28,7 @@ const diensten = [
     title: 'Frequent onderhoud',
     description: 'Vast bezoekritme, zodat uw tuin het hele jaar verzorgd blijft.',
     details:
-      'Met een vast onderhoudscontract komen we op regelmatige basis langs — wekelijks, tweewekelijks of maandelijks, in overleg met u. Zo blijft uw tuin het hele jaar door verzorgd, zonder dat u er zelf nog naar hoeft om te kijken.',
+      'Met een vast onderhoudscontract komen we op regelmatige basis langs: wekelijks, tweewekelijks of maandelijks, in overleg met u. Zo blijft uw tuin het hele jaar door verzorgd, zonder dat u er zelf nog naar hoeft om te kijken.',
   },
   {
     icon: 'droplet',
