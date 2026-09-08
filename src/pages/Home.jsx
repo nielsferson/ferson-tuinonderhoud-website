@@ -57,7 +57,7 @@ export default function Home() {
       <section className="home-section">
         <p className="home-section-label">Recent project</p>
         <Reveal className="home-project-preview">
-          <BeforeAfterSlider beforeImg={project1Voor} afterImg={project1Na} alt="Tuin Hasselt" />
+          <BeforeAfterSlider beforeImg={project1Voor} afterImg={project1Na} alt="Voortuin Snoeiwerk" />
         </Reveal>
         <Link to="/projecten" className="section-link">Alle projecten bekijken →</Link>
       </section>
