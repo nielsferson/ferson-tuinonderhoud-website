@@ -42,7 +42,9 @@ const diensten = [
 export default function Diensten() {
   return (
     <section>
-      <h2>Onze diensten</h2>
+      <div className="page-header">
+        <h2>Onze diensten</h2>
+      </div>
       <div className="services-grid">
         {diensten.map((d, i) => (
           <Reveal key={d.title} delay={i * 70}>

@@ -31,8 +31,10 @@ const projecten = [
 export default function Projecten() {
   return (
     <section>
-      <h2>Onze projecten</h2>
-      <p className="projects-intro">Een greep uit ons werk — schuif de foto's om voor en na te vergelijken.</p>
+      <div className="page-header">
+        <h2>Onze projecten</h2>
+        <p className="projects-intro">Een greep uit ons werk — schuif de foto's om voor en na te vergelijken.</p>
+      </div>
       <div className="projects-grid">
         {projecten.map((p, i) => (
           <Reveal key={p.title} delay={i * 80}>
