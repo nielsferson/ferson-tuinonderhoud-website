@@ -1,30 +1,74 @@
+:root {
+  --green-darkest: #173404;
+  --green-dark: #27500A;
+  --green-mid: #3B6D11;
+  --green: #639922;
+  --green-light: #97C459;
+  --green-pale: #C0DD97;
+  --green-bg: #EAF3DE;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: system-ui, sans-serif; color: #1f2d1f; }
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #2f5233; color: #fff; }
+
+/* Navbar & footer */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: var(--green-darkest); color: #fff; }
+.navbar-brand { font-weight: 600; }
 .navbar-links { display: flex; gap: 1.5rem; list-style: none; }
-.navbar-links a { color: #fff; text-decoration: none; }
-.hero { padding: 4rem 2rem; text-align: center; background: #eaf3ea; }
+.navbar-links a { color: var(--green-pale); text-decoration: none; }
+.navbar-links a:hover { color: #fff; }
+.footer { text-align: center; padding: 1.5rem; background: var(--green-darkest); color: var(--green-pale); }
+
+/* Image placeholders (swap for real <img> later) */
+.image-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: var(--green-pale); }
+.image-placeholder-icon { opacity: 0.9; }
+.image-placeholder-label { font-size: 0.75rem; }
+.image-placeholder-hero { width: 100%; height: 100%; background: var(--green-dark); position: absolute; inset: 0; }
+.image-placeholder-before { aspect-ratio: 4/3; border-radius: 8px; background: var(--green-mid); }
+.image-placeholder-after { aspect-ratio: 4/3; border-radius: 8px; background: var(--green); }
+
+/* Hero */
+.hero { position: relative; min-height: 340px; display: flex; align-items: flex-end; overflow: hidden; }
+.hero-content { position: relative; z-index: 1; padding: 2rem; color: #fff; max-width: 420px; }
+.hero-content h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.hero-content p { margin-bottom: 1.25rem; color: var(--green-bg); }
+.hero-cta { display: inline-block; background: var(--green-mid); color: var(--green-bg); text-decoration: none; padding: 0.6rem 1.25rem; border-radius: 6px; font-size: 0.9rem; }
+.hero-cta:hover { background: var(--green); }
+
+/* Home page sections */
+.home-section { padding: 2rem; }
+.home-section-label { font-size: 0.85rem; color: var(--green-mid); margin-bottom: 0.75rem; font-weight: 500; }
+.services-preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
+.service-preview-card { background: var(--green-bg); border-radius: 8px; padding: 1rem 0.5rem; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--green-dark); text-align: center; font-size: 0.85rem; }
+.project-preview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; max-width: 500px; }
+.section-link { color: var(--green-mid); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+.section-link:hover { text-decoration: underline; }
+
+/* Diensten page */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; padding: 2rem; }
-.service-card { border: 1px solid #cfe0cf; border-radius: 8px; padding: 1.5rem; }
-.footer { text-align: center; padding: 1.5rem; background: #2f5233; color: #fff; }
+.service-card { border: 1px solid var(--green-pale); border-radius: 8px; padding: 1.5rem; }
+
+/* Contact */
 .contact-list { list-style: none; padding: 2rem; max-width: 400px; }
-.contact-list li { display: flex; flex-direction: column; gap: 4px; padding: 1rem 0; border-bottom: 1px solid #cfe0cf; }
-.contact-list span { font-size: 0.85rem; color: #5c7a54; }
-.contact-list a { color: #2f5233; text-decoration: none; font-weight: 500; }
+.contact-list li { display: flex; flex-direction: column; gap: 4px; padding: 1rem 0; border-bottom: 1px solid var(--green-pale); }
+.contact-list span { font-size: 0.85rem; color: var(--green-mid); }
+.contact-list a { color: var(--green-darkest); text-decoration: none; font-weight: 500; }
 .contact-form { display: flex; flex-direction: column; gap: 6px; max-width: 400px; padding: 0 2rem 2rem; }
-.contact-form label { font-size: 0.85rem; color: #5c7a54; margin-top: 10px; }
-.contact-form input, .contact-form textarea { padding: 8px 10px; border: 1px solid #cfe0cf; border-radius: 6px; font: inherit; }
-.contact-form button { margin-top: 14px; padding: 10px; background: #2f5233; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+.contact-form label { font-size: 0.85rem; color: var(--green-mid); margin-top: 10px; }
+.contact-form input, .contact-form textarea { padding: 8px 10px; border: 1px solid var(--green-pale); border-radius: 6px; font: inherit; }
+.contact-form button { margin-top: 14px; padding: 10px; background: var(--green-darkest); color: #fff; border: none; border-radius: 6px; cursor: pointer; }
 .contact-form button:disabled { opacity: 0.6; cursor: default; }
 .form-status { margin-top: 10px; font-size: 0.9rem; }
-.form-status-ok { color: #2f5233; }
+.form-status-ok { color: var(--green-darkest); }
 .form-status-error { color: #a33; }
-.projects-intro { padding: 0 2rem; color: #5c7a54; }
+
+/* Projecten page */
+.projects-intro { padding: 0 2rem; color: var(--green-mid); }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 2rem; }
-.project-card { border: 1px solid #cfe0cf; border-radius: 8px; overflow: hidden; padding-bottom: 1rem; }
+.project-card { border: 1px solid var(--green-pale); border-radius: 8px; overflow: hidden; padding-bottom: 1rem; }
 .project-images { display: grid; grid-template-columns: 1fr 1fr; }
-.project-image { position: relative; aspect-ratio: 4 / 3; background: #eaf3ea; }
+.project-image { position: relative; aspect-ratio: 4 / 3; background: var(--green-bg); }
 .project-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.project-label { position: absolute; bottom: 6px; left: 6px; background: rgba(47,82,51,0.85); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.project-label { position: absolute; bottom: 6px; left: 6px; background: rgba(23,52,4,0.85); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
 .project-card h3 { padding: 0.75rem 1rem 0; }
-.project-card p { padding: 0.25rem 1rem 0; color: #4a5c48; font-size: 0.9rem; }
+.project-card p { padding: 0.25rem 1rem 0; color: var(--green-mid); font-size: 0.9rem; }
