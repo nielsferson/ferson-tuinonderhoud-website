@@ -9,20 +9,20 @@ import project3Na from '../assets/images/project3-na.jpg'
 
 const projecten = [
   {
-    title: 'Tuin Hasselt',
-    description: 'Volledige heraanleg van gazon en border.',
+    title: 'Voortuin Snoeiwerk',
+    description: 'Verouderde en verwilderde beplanting grondig teruggesnoeid en opnieuw in vorm gebracht. De hagen en borders werden opgefrist voor een strakkere, verzorgde tuin.',
     beforeImg: project1Voor,
     afterImg: project1Na,
   },
   {
-    title: 'Haagrenovatie',
-    description: 'Verwilderde haag teruggesnoeid tot strakke vorm.',
+    title: 'Haag verwijderen & terrein herstellen',
+    description: 'De bestaande haag en beplanting werden volledig verwijderd. Daarna werd de ondergrond geëgaliseerd en netjes afgewerkt, klaar voor een nieuwe aanleg of verdere inrichting.',
     beforeImg: project2Voor,
     afterImg: project2Na,
   },
   {
     title: 'Tuinonderhoud',
-    description: 'Gazon en border weer strak en verzorgd gemaakt.',
+    description: 'Uitgegroeide haag strak gesnoeid voor een verzorgde uitstraling en vrije doorgang.',
     beforeImg: project3Voor,
     afterImg: project3Na,
   },
