@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ImagePlaceholder from '../components/ImagePlaceholder.jsx'
+import heroImage from '../assets/images/verzorgde-tuin-haag.jpg'
 
 const diensten = [
   { title: 'Onkruid', icon: 'leaf' },
@@ -26,7 +27,8 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <ImagePlaceholder label="Foto: verzorgde tuin" tone="hero" className="hero-image" />
+        <img src={heroImage} alt="Strak gesnoeide haag in een verzorgde tuin" className="hero-image" />
+        <div className="hero-overlay" />
         <div className="hero-content">
           <h1>Uw tuin, onze zorg</h1>
           <p>Professioneel tuinonderhoud in heel België.</p>
