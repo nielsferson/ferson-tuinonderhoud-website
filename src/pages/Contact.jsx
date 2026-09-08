@@ -10,7 +10,6 @@ const SERVICES = [
   { id: 'hagen', label: 'Snoeien van hagen', icon: 'cut' },
   { id: 'gazon', label: 'Onderhoud van gazons', icon: 'grass' },
   { id: 'onderhoud', label: 'Frequent onderhoud', icon: 'repeat' },
-  { id: 'bemesten', label: 'Bemesten van planten', icon: 'droplet' },
   { id: 'anders', label: 'Iets anders', icon: 'other' },
 ]
 

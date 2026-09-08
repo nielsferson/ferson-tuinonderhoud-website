@@ -30,13 +30,6 @@ const diensten = [
     details:
       'Met een vast onderhoudscontract komen we op regelmatige basis langs: wekelijks, tweewekelijks of maandelijks, in overleg met u. Zo blijft uw tuin het hele jaar door verzorgd, zonder dat u er zelf nog naar hoeft om te kijken.',
   },
-  {
-    icon: 'droplet',
-    title: 'Bemesten van planten',
-    description: 'Gerichte bemesting voor sterke, gezonde beplanting.',
-    details:
-      'We kiezen de juiste meststof per plant en per seizoen, zodat hagen, gazon en border optimaal gevoed worden. Gezonde, goed bemeste beplanting is beter bestand tegen ziektes en droogte, en groeit sterker terug na het snoeien.',
-  },
 ]
 
 export default function Diensten() {
