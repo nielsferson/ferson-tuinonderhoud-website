@@ -275,6 +275,14 @@ body { font-family: system-ui, sans-serif; color: #1f2d1f; }
 .hero-cta { display: inline-block; background: var(--green-mid); color: var(--green-bg); text-decoration: none; padding: 0.6rem 1.25rem; border-radius: 6px; font-size: 0.9rem; }
 .hero-cta:hover { background: var(--green); }
 
+@media (max-width: 640px) {
+  .hero { min-height: 260px; align-items: center; }
+  .hero-overlay { background: linear-gradient(180deg, rgba(10, 20, 5, 0.55) 0%, rgba(10, 20, 5, 0.42) 50%, rgba(10, 20, 5, 0.6) 100%); }
+  .hero-content { padding: 1.5rem; max-width: 100%; }
+  .hero-content h1 { font-size: 1.6rem; }
+  .hero-content p { margin-bottom: 1rem; }
+}
+
 /* Home page sections */
 .home-section { padding: 2rem; }
 .home-section-label { font-size: 0.85rem; color: var(--green-mid); margin-bottom: 0.75rem; font-weight: 500; }
