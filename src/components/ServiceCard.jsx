@@ -1,12 +1,19 @@
-import { useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import ServiceIcon from './ServiceIcon.jsx'
 
-export default function ServiceCard({ icon, title, description, details }) {
-  const [open, setOpen] = useState(false)
+export default function ServiceCard({ id, icon, title, description, details, forceOpen }) {
+  const [open, setOpen] = useState(Boolean(forceOpen))
   const panelId = useId()
+  const rootRef = useRef(null)
+
+  useEffect(() => {
+    if (!forceOpen) return
+    setOpen(true)
+    rootRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [forceOpen])
 
   return (
-    <div className={`service-card${open ? ' is-open' : ''}`}>
+    <div id={id} ref={rootRef} className={`service-card${open ? ' is-open' : ''}`}>
       <button
         type="button"
         className="service-card-header"
