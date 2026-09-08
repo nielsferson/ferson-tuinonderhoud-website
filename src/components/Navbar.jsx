@@ -1,18 +1,52 @@
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import logo from '../assets/images/fersontuinonderhoud-logo.png'
 
+const links = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/diensten', label: 'Diensten' },
+  { to: '/projecten', label: 'Projecten' },
+  { to: '/over-ons', label: 'Over ons' },
+  { to: '/contact', label: 'Contact' },
+]
+
 export default function Navbar() {
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+  }, [open])
+
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-brand">
+      <NavLink to="/" className="navbar-brand" onClick={() => setOpen(false)}>
         <img src={logo} alt="Ferson Tuinonderhoud" className="navbar-logo" />
-      </Link>
-      <ul className="navbar-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/diensten">Diensten</Link></li>
-        <li><Link to="/projecten">Projecten</Link></li>
-        <li><Link to="/over-ons">Over ons</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+      </NavLink>
+
+      <button
+        className={`navbar-toggle${open ? ' is-open' : ''}`}
+        aria-label={open ? 'Sluit menu' : 'Open menu'}
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <ul className={`navbar-links${open ? ' is-open' : ''}`}>
+        {links.map(({ to, label, end }) => (
+          <li key={to}>
+            <NavLink
+              to={to}
+              end={end}
+              onClick={() => setOpen(false)}
+              className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+            >
+              {label}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   )
