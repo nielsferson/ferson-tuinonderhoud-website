@@ -1,13 +1,11 @@
 import { useState } from 'react'
 import ServiceIcon from '../components/ServiceIcon.jsx'
+import { diensten } from '../data/services.js'
 
 const FORM_ENDPOINT = 'https://formspree.io/f/mbgjpgnb'
 
 const SERVICES = [
-  { id: 'onkruid', label: 'Onkruid verwijderen', icon: 'leaf' },
-  { id: 'hagen', label: 'Snoeien van hagen', icon: 'cut' },
-  { id: 'gazon', label: 'Onderhoud van gazons', icon: 'grass' },
-  { id: 'onderhoud', label: 'Frequent onderhoud', icon: 'repeat' },
+  ...diensten.map((d) => ({ id: d.slug, label: d.title, icon: d.icon })),
   { id: 'anders', label: 'Iets anders', icon: 'other' },
 ]
 
