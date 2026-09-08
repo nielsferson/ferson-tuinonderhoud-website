@@ -1,4 +1,5 @@
 import ServiceCard from '../components/ServiceCard.jsx'
+import Reveal from '../components/Reveal.jsx'
 
 const diensten = [
   {
@@ -28,8 +29,10 @@ export default function Diensten() {
     <section>
       <h2>Onze diensten</h2>
       <div className="services-grid">
-        {diensten.map((d) => (
-          <ServiceCard key={d.title} title={d.title} description={d.description} />
+        {diensten.map((d, i) => (
+          <Reveal key={d.title} delay={i * 70}>
+            <ServiceCard title={d.title} description={d.description} />
+          </Reveal>
         ))}
       </div>
     </section>

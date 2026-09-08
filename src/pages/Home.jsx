@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
-import ImagePlaceholder from '../components/ImagePlaceholder.jsx'
+import BeforeAfterSlider from '../components/BeforeAfterSlider.jsx'
+import Reveal from '../components/Reveal.jsx'
 import heroImage from '../assets/images/verzorgde-tuin-haag.jpg'
+import project1Voor from '../assets/images/project1-voor.jpg'
+import project1Na from '../assets/images/project1-na.jpg'
 
 const diensten = [
   { title: 'Onkruid', icon: 'leaf' },
@@ -39,11 +42,13 @@ export default function Home() {
       <section className="home-section">
         <p className="home-section-label">Onze diensten</p>
         <div className="services-preview-grid">
-          {diensten.map((d) => (
-            <div className="service-preview-card" key={d.title}>
-              <ServiceIcon name={d.icon} />
-              <span>{d.title}</span>
-            </div>
+          {diensten.map((d, i) => (
+            <Reveal key={d.title} delay={i * 60}>
+              <div className="service-preview-card">
+                <ServiceIcon name={d.icon} />
+                <span>{d.title}</span>
+              </div>
+            </Reveal>
           ))}
         </div>
         <Link to="/diensten" className="section-link">Alle diensten bekijken →</Link>
@@ -51,10 +56,9 @@ export default function Home() {
 
       <section className="home-section">
         <p className="home-section-label">Recent project</p>
-        <div className="project-preview-grid">
-          <ImagePlaceholder label="Voor" tone="before" />
-          <ImagePlaceholder label="Na" tone="after" />
-        </div>
+        <Reveal className="home-project-preview">
+          <BeforeAfterSlider beforeImg={project1Voor} afterImg={project1Na} alt="Tuin Hasselt" />
+        </Reveal>
         <Link to="/projecten" className="section-link">Alle projecten bekijken →</Link>
       </section>
     </>
