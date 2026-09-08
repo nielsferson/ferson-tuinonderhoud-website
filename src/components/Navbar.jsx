@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
+import logo from '../assets/images/fersontuinonderhoud-logo.png'
 
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-brand">Ferson Tuinonderhoud</div>
+      <Link to="/" className="navbar-brand">
+        <img src={logo} alt="Ferson Tuinonderhoud" className="navbar-logo" />
+      </Link>
       <ul className="navbar-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/diensten">Diensten</Link></li>
