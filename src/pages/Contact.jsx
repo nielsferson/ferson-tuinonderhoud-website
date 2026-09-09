@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ServiceIcon from '../components/ServiceIcon.jsx'
 import { diensten } from '../data/services.js'
 
@@ -50,12 +50,27 @@ export default function Contact() {
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const [touched, setTouched] = useState(false)
 
+  const trackRef = useRef(null)
+  const panelRefs = useRef([])
+
   const stepValid = [
     data.services.length > 0,
     Boolean(data.gardenSize && data.timing && data.frequency),
     Boolean(data.name.trim() && data.email.trim()),
     true,
   ]
+
+  useEffect(() => {
+    function syncHeight() {
+      const panel = panelRefs.current[step]
+      if (panel && trackRef.current) {
+        trackRef.current.style.height = `${panel.scrollHeight}px`
+      }
+    }
+    syncHeight()
+    window.addEventListener('resize', syncHeight)
+    return () => window.removeEventListener('resize', syncHeight)
+  }, [step, data, touched])
 
   function update(field, value) {
     setData((d) => ({ ...d, [field]: value }))
@@ -192,8 +207,8 @@ export default function Contact() {
           <p className="quote-step-counter" aria-live="polite">Stap {step + 1} van {STEPS.length} — {STEPS[step]}</p>
 
           <form className="quote-form" onSubmit={(e) => e.preventDefault()} onKeyDown={handleKeyDown}>
-            <div className="quote-track" style={{ transform: `translateX(-${step * 100}%)` }}>
-              <div className="quote-panel" {...(step !== 0 ? { inert: '' } : {})}>
+            <div className="quote-track" ref={trackRef} style={{ transform: `translateX(-${step * 100}%)` }}>
+              <div className="quote-panel" ref={(el) => (panelRefs.current[0] = el)} {...(step !== 0 ? { inert: '' } : {})}>
                 <h3>Voor welke dienst(en) wilt u een offerte?</h3>
                 <p className="quote-panel-hint">Kies één of meerdere diensten.</p>
                 <div className="chip-grid">
@@ -213,7 +228,7 @@ export default function Contact() {
                 {touched && !stepValid[0] && <p className="quote-error">Kies minstens één dienst.</p>}
               </div>
 
-              <div className="quote-panel" {...(step !== 1 ? { inert: '' } : {})}>
+              <div className="quote-panel" ref={(el) => (panelRefs.current[1] = el)} {...(step !== 1 ? { inert: '' } : {})}>
                 <h3>Vertel iets over uw tuin</h3>
 
                 <fieldset className="quote-field">
@@ -282,7 +297,7 @@ export default function Contact() {
                 {touched && !stepValid[1] && <p className="quote-error">Kies de grootte, timing en het type dienstverlening.</p>}
               </div>
 
-              <div className="quote-panel" {...(step !== 2 ? { inert: '' } : {})}>
+              <div className="quote-panel" ref={(el) => (panelRefs.current[2] = el)} {...(step !== 2 ? { inert: '' } : {})}>
                 <h3>Uw contactgegevens</h3>
                 <div className="quote-field">
                   <label htmlFor="name">Naam</label>
@@ -303,7 +318,7 @@ export default function Contact() {
                 {touched && !stepValid[2] && <p className="quote-error">Vul minstens uw naam en e-mailadres in.</p>}
               </div>
 
-              <div className="quote-panel" {...(step !== 3 ? { inert: '' } : {})}>
+              <div className="quote-panel" ref={(el) => (panelRefs.current[3] = el)} {...(step !== 3 ? { inert: '' } : {})}>
                 <h3>Controleer uw aanvraag</h3>
                 <dl className="quote-summary">
                   <div className="quote-summary-row">
